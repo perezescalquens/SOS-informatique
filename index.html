@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perez Informatique Escalquens | Spécialiste PC & Retrogaming</title>
+    <style>
+        :root {
+            --primary: #004494;
+            --secondary: #00a8e8;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --retro-accent: #e74c3c;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        nav {
+            background: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-size: 1.3rem; font-weight: bold; color: var(--primary); }
+        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--secondary); }
+
+        .hero {
+            background: linear-gradient(rgba(0,40,85,0.85), rgba(0,40,85,0.85)), 
+                        url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .btn {
+            background: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        section { 
+            padding: 100px 5% 60px;
+        }
+        
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 2rem; color: var(--primary); }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--secondary); }
+        .card h3 { color: var(--primary); margin-top: 0; }
+
+        .retro-card { border: 1px solid var(--retro-accent); }
+        .retro-card h3 { color: var(--retro-accent); }
+
+        .price-box {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+            border: 2px dashed var(--secondary);
+        }
+
+        .price-main { font-size: 3rem; font-weight: bold; }
+        .features-list { list-style: none; padding: 0; margin: 20px 0; text-align: left; display: inline-block; }
+        .features-list li::before { content: "✔️"; margin-right: 10px; color: var(--secondary); }
+
+        .contact-box { text-align: center; font-size: 1.2rem; background: #fff; padding: 30px; border-radius: 10px; }
+
+        footer {
+            background: var(--dark);
+            color: #ecf0f1;
+            text-align: center;
+            padding: 40px 5%;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">💻 Perez Informatique</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#tarifs">Tarifs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Dépannage PC & Retrogaming à Escalquens</h1>
+        <p>Expert Windows et passionné de jeux vidéo anciens. Intervention à domicile rapide.</p>
+        <a href="#contact" class="btn">Me contacter</a>
+    </header>
+
+    <section id="services">
+        <div class="section-title">
+            <h2>Mes Services</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>🛠️ Dépannage PC Windows</h3>
+                <p>Réparation système, suppression de virus, lenteurs, écrans bleus et mises à jour système (hors Mac).</p>
+            </div>
+            <div class="card">
+                <h3>💾 Matériel & SSD</h3>
+                <p>Installation de disques SSD pour booster votre PC, extension de mémoire et récupération de données.</p>
+            </div>
+            <div class="card">
+                <h3>🌐 Internet & Box</h3>
+                <p>Configuration de box internet, optimisation WiFi, installation d'imprimantes et d'objets connectés.</p>
+            </div>
+            <div class="card retro-card">
+                <h3>🎮 Montage Console Retrogaming</h3>
+                <p>Configuration de systèmes dédiés (Raspberry Pi, Recalbox/Batocera). <br>
+                <small><em>Note : Pour des raisons légales, je fournis uniquement le matériel et la configuration logicielle, <strong>je ne fournis aucune ROM (jeux)</strong>.</em></small></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tarifs" style="background-color: #fff;">
+        <div class="section-title">
+            <h2>Tarif Unique</h2>
+        </div>
+        <div class="price-box">
+            <div class="price-main">40€ <small style="font-size: 1rem;">/ heure</small></div>
+            <ul class="features-list">
+                <li><strong>Devis Gratuit</strong></li>
+                <li><strong>Facture officielle fournie</strong></li>
+                <li>Déplacement inclus sur Escalquens</li>
+                <li>Conseils personnalisés</li>
+            </ul>
+            <p style="font-size: 0.8rem;"><em>TVA non applicable, art. 293 B du CGI</em></p>
+        </div>
+    </section>
+
+    <section id="contact" style="background-color: var(--light);">
+        <div class="section-title">
+            <h2>Prendre rendez-vous</h2>
+            <p>Intervention sur Escalquens et communes limitrophes.</p>
+        </div>
+        <div class="contact-box">
+            <p>📞 Téléphone : <a href="tel:0685816226" style="color: var(--primary); font-weight: bold; text-decoration: none;">06 85 81 62 26</a></p>
+            <p>📧 Email : <a href="mailto:perezescalquens@gmail.com" style="color: var(--primary); font-weight: bold; text-decoration: none;">perezescalquens@gmail.com</a></p>
+            <p>📍 Secteur : Escalquens, Labège, St-Orens, etc.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Perez Informatique Escalquens</strong><br>
+        Dépannage PC & Passion Retrogaming<br>
+        SIRET : 10282142800012<br>
+        &copy; 2024 - Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
