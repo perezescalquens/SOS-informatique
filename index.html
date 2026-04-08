@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perez Informatique Escalquens | Spécialiste PC & Retrogaming</title>
+    <title>Perez Informatique Escalquens | Assistance SAP & Retrogaming</title>
     <style>
         :root {
             --primary: #004494;
             --secondary: #00a8e8;
+            --sap-pink: #ed008c;
             --dark: #2c3e50;
             --light: #f8f9fa;
             --retro-accent: #e74c3c;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -45,7 +44,7 @@
         .hero {
             background: linear-gradient(rgba(0,40,85,0.85), rgba(0,40,85,0.85)), 
                         url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
-            height: 60vh;
+            height: 65vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -56,6 +55,16 @@
         }
 
         .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .sap-badge {
+            background: var(--sap-pink);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
         .btn {
             background: var(--secondary);
             color: white;
@@ -65,11 +74,11 @@
             font-weight: bold;
             display: inline-block;
             margin-top: 20px;
+            transition: 0.3s;
         }
+        .btn:hover { background: var(--primary); }
 
-        section { 
-            padding: 100px 5% 60px;
-        }
+        section { padding: 80px 5% 60px; }
         
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { font-size: 2rem; color: var(--primary); }
@@ -91,6 +100,20 @@
         .retro-card { border: 1px solid var(--retro-accent); }
         .retro-card h3 { color: var(--retro-accent); }
 
+        /* Style spécifique SAP */
+        .sap-box {
+            background: #fff;
+            border: 2px solid var(--sap-pink);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
         .price-box {
             background: var(--light);
             padding: 40px;
@@ -101,7 +124,9 @@
             border: 2px dashed var(--secondary);
         }
 
-        .price-main { font-size: 3rem; font-weight: bold; }
+        .price-main { font-size: 3rem; font-weight: bold; color: var(--dark); }
+        .price-net { color: var(--sap-pink); font-size: 1.5rem; font-weight: bold; margin-top: -10px; display: block; }
+
         .features-list { list-style: none; padding: 0; margin: 20px 0; text-align: left; display: inline-block; }
         .features-list li::before { content: "✔️"; margin-right: 10px; color: var(--secondary); }
 
@@ -117,6 +142,7 @@
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
+            .sap-box { text-align: center; justify-content: center; }
         }
     </style>
 </head>
@@ -126,75 +152,92 @@
         <div class="logo">💻 Perez Informatique</div>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
+            <li><a href="#sap">Avantages Fiscaux</a></li>
             <li><a href="#tarifs">Tarifs</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>Dépannage PC & Retrogaming à Escalquens</h1>
-        <p>Expert Windows et passionné de jeux vidéo anciens. Intervention à domicile rapide.</p>
-        <a href="#contact" class="btn">Me contacter</a>
+        <div class="sap-badge">Agréé Services à la Personne</div>
+        <h1>Assistance Informatique à Escalquens</h1>
+        <p>Expert Windows & Retrogaming. Récupérez 50% de vos dépenses en crédit d'impôt !</p>
+        <a href="#contact" class="btn">Prendre RDV</a>
     </header>
 
     <section id="services">
         <div class="section-title">
-            <h2>Mes Services</h2>
+            <h2>Dépannage & Assistance à Domicile</h2>
         </div>
         <div class="grid">
             <div class="card">
-                <h3>🛠️ Dépannage PC Windows</h3>
-                <p>Réparation système, suppression de virus, lenteurs, écrans bleus et mises à jour système (hors Mac).</p>
+                <h3>🛠️ Dépannage Windows</h3>
+                <p>Réparation système, suppression de virus, lenteurs et mises à jour (PC uniquement).</p>
             </div>
             <div class="card">
-                <h3>💾 Matériel & SSD</h3>
-                <p>Installation de disques SSD pour booster votre PC, extension de mémoire et récupération de données.</p>
+                <h3>💾 Hardware & SSD</h3>
+                <p>Boostez votre PC avec un SSD, extension mémoire et sauvegarde de données.</p>
             </div>
             <div class="card">
-                <h3>🌐 Internet & Box</h3>
-                <p>Configuration de box internet, optimisation WiFi, installation d'imprimantes et d'objets connectés.</p>
+                <h3>🌐 Internet & WiFi</h3>
+                <p>Config de box, optimisation WiFi, installation imprimantes et objets connectés.</p>
             </div>
             <div class="card retro-card">
-                <h3>🎮 Montage Console Retrogaming</h3>
-                <p>Configuration de systèmes dédiés (Raspberry Pi, Recalbox/Batocera). <br>
-                <small><em>Note : Pour des raisons légales, je fournis uniquement le matériel et la configuration logicielle, <strong>je ne fournis aucune ROM (jeux)</strong>.</em></small></p>
+                <h3>🎮 Expertise Retrogaming</h3>
+                <p>Montage et configuration de consoles rétro (Raspberry Pi, Batocera). <br>
+                <small><em>Logiciel uniquement, aucune ROM fournie.</em></small></p>
             </div>
         </div>
     </section>
 
-    <section id="tarifs" style="background-color: #fff;">
+    <section id="sap" style="background-color: var(--light);">
         <div class="section-title">
-            <h2>Tarif Unique</h2>
+            <h2>Avantages Fiscaux</h2>
+        </div>
+        <div class="sap-box">
+            <img src="Traceur_SAP_web_rvb_jpg.jpg" alt="Logo Services à la Personne" style="width: 150px; height: auto;">
+            <div style="flex: 1;">
+                <h3 style="color: var(--sap-pink); margin-top: 0;">Réduisez votre facture par 2 !</h3>
+                <p>En tant qu'organisme déclaré de <strong>Services à la Personne</strong> (N° SAP102821428), mes interventions d'assistance informatique à domicile vous ouvrent droit à un <strong>crédit d'impôt de 50%</strong>.</p>
+                <p><em>Exemple : Une heure d'intervention à 40€ ne vous coûte réellement que 20€ après avantage fiscal.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tarifs">
+        <div class="section-title">
+            <h2>Tarif Transparent</h2>
         </div>
         <div class="price-box">
             <div class="price-main">40€ <small style="font-size: 1rem;">/ heure</small></div>
+            <span class="price-net">Soit 20€ après crédit d'impôt</span>
             <ul class="features-list">
-                <li><strong>Devis Gratuit</strong></li>
-                <li><strong>Facture officielle fournie</strong></li>
-                <li>Déplacement inclus sur Escalquens</li>
-                <li>Conseils personnalisés</li>
+                <li><strong>Agrément d'État N° SAP102821428</strong></li>
+                <li><strong>Attestation fiscale fournie</strong></li>
+                <li>Déplacement inclus (Escalquens & alentours)</li>
+                <li>Devis gratuit et conseils d'expert</li>
             </ul>
-            <p style="font-size: 0.8rem;"><em>TVA non applicable, art. 293 B du CGI</em></p>
+            <p style="font-size: 0.8rem; margin-top: 15px;"><em>TVA non applicable, art. 293 B du CGI</em></p>
         </div>
     </section>
 
     <section id="contact" style="background-color: var(--light);">
         <div class="section-title">
-            <h2>Prendre rendez-vous</h2>
-            <p>Intervention sur Escalquens et communes limitrophes.</p>
+            <h2>Contactez-moi</h2>
+            <p>Intervention rapide à Escalquens, Labège, St-Orens et communes limitrophes.</p>
         </div>
         <div class="contact-box">
             <p>📞 Téléphone : <a href="tel:0685816226" style="color: var(--primary); font-weight: bold; text-decoration: none;">06 85 81 62 26</a></p>
             <p>📧 Email : <a href="mailto:perezescalquens@gmail.com" style="color: var(--primary); font-weight: bold; text-decoration: none;">perezescalquens@gmail.com</a></p>
-            <p>📍 Secteur : Escalquens, Labège, St-Orens, etc.</p>
+            <p>📍 Adresse : 50 Avenue du Lauragais, 31750 Escalquens</p>
         </div>
     </section>
 
     <footer>
         <p><strong>Perez Informatique Escalquens</strong><br>
-        Dépannage PC & Passion Retrogaming<br>
-        SIRET : 10282142800012<br>
-        &copy; 2024 - Tous droits réservés.</p>
+        Organisme de Services à la Personne enregistré sous le N° SAP102821428 <br>
+        SIREN : 102 821 428 | SIRET : 10282142800012 <br>
+        &copy; 2026 - William PEREZ - Tous droits réservés.</p>
     </footer>
 
 </body>
