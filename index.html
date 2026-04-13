@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perez Informatique Escalquens | Assistance SAP & Retrogaming</title>
+    <title>William PEREZ Escalquens | Assistance et depannage informatique - SAP & Retrogaming</title>
     <style>
         :root {
             --primary: #004494;
@@ -107,11 +107,20 @@
             border-radius: 15px;
             padding: 30px;
             margin: 40px auto;
-            max-width: 800px;
+            max-width: 900px;
             display: flex;
-            align-items: center;
-            gap: 20px;
+            align-items: flex-start;
+            gap: 25px;
             flex-wrap: wrap;
+        }
+
+        .info-avance {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            border-left: 4px solid var(--sap-pink);
         }
 
         .price-box {
@@ -142,7 +151,7 @@
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .sap-box { text-align: center; justify-content: center; }
+            .sap-box { text-align: center; justify-content: center; flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -192,14 +201,29 @@
 
     <section id="sap" style="background-color: var(--light);">
         <div class="section-title">
-            <h2>Avantages Fiscaux</h2>
+            <h2>Avantages Fiscaux & Avance Immédiate</h2>
         </div>
         <div class="sap-box">
             <img src="Traceur_SAP_web_rvb_jpg.jpg" alt="Logo Services à la Personne" style="width: 150px; height: auto;">
             <div style="flex: 1;">
-                <h3 style="color: var(--sap-pink); margin-top: 0;">Réduisez votre facture par 2 !</h3>
-                <p>En tant qu'organisme déclaré de <strong>Services à la Personne</strong> (N° SAP102821428), mes interventions d'assistance informatique à domicile vous ouvrent droit à un <strong>crédit d'impôt de 50%</strong>.</p>
-                <p><em>Exemple : Une heure d'intervention à 40€ ne vous coûte réellement que 20€ après avantage fiscal.</em></p>
+                <h3 style="color: var(--sap-pink); margin-top: 0;">Payez seulement 50% de la facture !</h3>
+                <p>En tant qu'organisme déclaré de <strong>Services à la Personne</strong> (N° SAP102821428), mes interventions vous ouvrent droit à un <strong>crédit d'impôt de 50%</strong>.</p>
+                
+                <div class="info-avance">
+                    <strong>Le service "Avance Immédiate" :</strong>
+                    <p>Ce service optionnel, <strong>gratuit et non obligatoire</strong>, est mis en place par l'<strong>Urssaf</strong> et la <strong>Direction générale des Finances publiques</strong>.</p>
+                    
+                    <strong>Comment ça marche ?</strong>
+                    <ul>
+                        <li>J'inscris mes clients sur la plateforme de l'Urssaf.</li>
+                        <li>Le client reçoit un mail pour <strong>activer son compte</strong> sur le site dédié.</li>
+                        <li>Chaque mois, je transmets la facture à l'Urssaf. Le client reçoit une notification.</li>
+                        <li>Le client a <strong>48h pour valider</strong> ou contester la demande de paiement.</li>
+                        <li>Seul le reste à charge (50%) est prélevé sur le compte du client.</li>
+                    </ul>
+                    <p><em>En cas de question, votre interlocuteur reste Perez Informatique.</em></p>
+                    <p><a href="https://www.impots.gouv.fr/portail/particulier/emploi-domicile" target="_blank" style="color: var(--primary);">Consulter les plafonds de crédit d'impôt (impots.gouv.fr)</a></p>
+                </div>
             </div>
         </div>
     </section>
@@ -213,6 +237,7 @@
             <span class="price-net">Soit 20€ après crédit d'impôt</span>
             <ul class="features-list">
                 <li><strong>Agrément d'État N° SAP102821428</strong></li>
+                <li><strong>Avance Immédiate disponible</strong></li>
                 <li><strong>Attestation fiscale fournie</strong></li>
                 <li>Déplacement inclus (Escalquens & alentours)</li>
                 <li>Devis gratuit et conseils d'expert</li>
