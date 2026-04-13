@@ -10,13 +10,13 @@
     
     <style>
         :root {
-            --primary: #00306e; /* Bleu marine plus profond */
-            --secondary: #008fcc; /* Bleu clair vif */
-            --sap-pink: #ed008c; /* Rose SAP */
+            --primary: #00306e;
+            --secondary: #008fcc;
+            --sap-pink: #ed008c;
             --dark: #1a1a1a;
             --light: #ffffff;
-            --bg-light: #f4f7f6; /* Fond très légèrement grisé */
-            --retro-accent: #d32f2f; /* Rouge rétro */
+            --bg-light: #f4f7f6;
+            --retro-accent: #d32f2f;
             --shadow: 0 4px 6px rgba(0,0,0,0.07);
             --transition: all 0.3s ease;
         }
@@ -47,11 +47,11 @@
         .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; }
         .logo svg { width: 25px; height: 25px; fill: var(--primary); }
         
-        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; gap: 30px; }
+        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; gap: 25px; }
         .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: var(--transition); font-size: 0.95rem; }
         .nav-links a:hover { color: var(--secondary); }
 
-        /* --- HERO MODERNISÉE --- */
+        /* --- HERO --- */
         .hero {
             background: linear-gradient(135deg, rgba(0,30,110,0.92) 0%, rgba(0,50,130,0.85) 100%), 
                         url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
@@ -87,23 +87,23 @@
             background: var(--light);
             color: var(--primary);
             padding: 18px 45px;
-            text-decoration: none;
+            text-decoration: none; border: none;
             border-radius: 50px;
             font-weight: 700;
-            display: inline-block;
+            display: inline-block; cursor: pointer;
             transition: var(--transition);
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            font-size: 1rem;
+            font-size: 1rem; font-family: 'Poppins', sans-serif;
         }
         .btn:hover { background: var(--secondary); color: var(--light); transform: translateY(-3px); }
 
         /* --- SECTIONS COMMUNES --- */
-        section { padding: 100px 8% 80px; }
-        .section-title { text-align: center; margin-bottom: 60px; }
+        section { padding: 90px 8% 70px; }
+        .section-title { text-align: center; margin-bottom: 50px; }
         .section-title h2 { font-size: 2.5rem; color: var(--primary); font-weight: 700; margin-bottom: 10px; }
         .section-title p { color: #666; font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
 
-        /* --- SERVICES MODERNISÉS & ICÔNES --- */
+        /* --- SERVICES --- */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
 
         .card {
@@ -130,7 +130,7 @@
         .card.retro h3 { color: var(--retro-accent); }
         .card.retro .card-icon fill { fill: var(--retro-accent); }
 
-        /* --- SECTION SAP --- */
+        /* --- SAP --- */
         .sap-section { background: var(--light); border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
         .sap-box {
             display: flex;
@@ -157,14 +157,14 @@
         .sap-content h3 { color: var(--sap-pink); font-size: 2rem; margin-top: 0; font-weight: 700; }
         .sap-content p { color: #555; font-size: 1.1rem; max-width: 600px; }
 
-        /* --- TARIFS & FORFAITS --- */
+        /* --- TARIFS --- */
         .tarifs-section { background: var(--bg-light); }
         .price-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             max-width: 1000px;
-            margin: 0 auto 50px;
+            margin: 0 auto 30px;
         }
 
         .price-box {
@@ -178,11 +178,7 @@
             transition: var(--transition);
         }
 
-        .price-box.featured {
-            border: 2px solid var(--secondary);
-            transform: scale(1.03);
-            box-shadow: 0 10px 30px rgba(0, 143, 204, 0.08);
-        }
+        .price-box.featured { border: 2px solid var(--secondary); transform: scale(1.03); box-shadow: 0 10px 30px rgba(0, 143, 204, 0.08); }
         .price-box.featured h3 { color: var(--secondary); }
         .featured-badge {
             position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
@@ -203,56 +199,60 @@
 
         .tarif-notes { text-align: center; font-size: 0.9rem; color: #777; max-width: 600px; margin: 0 auto; }
 
+        /* --- AVIS CLIENTS (NOUVEAU) --- */
+        .avis-section { background: var(--light); border-top: 1px solid #eee; }
+        .reviews-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto; }
+        
+        .review-box { background: var(--bg-light); padding: 40px; border-radius: 20px; text-align: center; border: 1px solid #eee; box-shadow: var(--shadow); }
+        .review-box h3 { color: var(--primary); font-size: 1.4rem; margin-top: 0; margin-bottom: 15px; }
+        .review-box p { color: #555; font-size: 0.95rem; margin-bottom: 20px; }
+
+        /* Style Google */
+        .google-logo { font-size: 1.8rem; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 15px; display: block; }
+        .g-blue { color: #4285F4; } .g-red { color: #EA4335; } .g-yellow { color: #FBBC05; } .g-green { color: #34A853; }
+        
+        .qr-code-img { width: 160px; height: 160px; margin: 0 auto 20px; border: 2px solid #ddd; border-radius: 10px; padding: 5px; background: #fff; display: block; }
+        .google-link { display: inline-block; word-break: break-all; color: var(--secondary); font-weight: 500; font-size: 0.9rem; margin-top: 10px; }
+        
+        /* Formulaire */
+        .review-form { display: flex; flex-direction: column; gap: 15px; text-align: left; }
+        .review-form input, .review-form textarea, .review-form select { 
+            width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; 
+            font-family: 'Poppins', sans-serif; font-size: 0.95rem; box-sizing: border-box; outline: none;
+        }
+        .review-form input:focus, .review-form textarea:focus, .review-form select:focus { border-color: var(--secondary); }
+        .review-form button { margin-top: 10px; width: 100%; padding: 15px; }
+
         /* --- CONTACT --- */
         .contact-section { background: var(--bg-light); border-top: 1px solid #eee; }
-        .contact-box {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--light);
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
+        .contact-box { max-width: 800px; margin: 0 auto; background: var(--light); padding: 50px; border-radius: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 20px; }
         .contact-item { display: flex; align-items: center; gap: 20px; font-size: 1.1rem; padding: 15px; border-radius: 10px; transition: var(--transition); }
         .contact-item:hover { background: rgba(0,143,204,0.03); }
         .contact-icon { width: 40px; height: 40px; fill: var(--secondary); display: flex; align-items: center; justify-content: center; }
-        
         .contact-item span { font-weight: 600; color: var(--primary); min-width: 100px; }
         .contact-item a, .contact-item p { margin: 0; text-decoration: none; color: var(--dark); font-weight: 400; }
         .contact-item a:hover { color: var(--secondary); }
 
         /* --- FOOTER --- */
-        footer {
-            background: var(--dark);
-            color: #b3b3b3;
-            text-align: center;
-            padding: 50px 8%;
-            font-size: 0.9rem;
-            border-top: 4px solid var(--primary);
-        }
+        footer { background: var(--dark); color: #b3b3b3; text-align: center; padding: 50px 8%; font-size: 0.9rem; border-top: 4px solid var(--primary); }
         footer strong { color: #fff; font-size: 1.1rem; display: block; margin-bottom: 10px; }
 
         /* --- RESPONSIVITÉ --- */
         @media (max-width: 900px) {
             nav { padding: 1.2rem 5%; }
             .nav-links { gap: 15px; }
-            .hero h1 { font-size: 2.5rem; }
             .sap-box { flex-direction: column; text-align: center; gap: 30px; }
-            .price-container { grid-template-columns: 1fr; }
+            .price-container, .reviews-container { grid-template-columns: 1fr; }
             .price-box.featured { transform: scale(1); margin-top: 20px; }
         }
         @media (max-width: 600px) {
             .nav-links { display: none; }
-            .logo { font-size: 1.3rem; }
-            section { padding: 80px 5% 60px; }
+            .logo { font-size: 1.2rem; }
+            section { padding: 70px 5% 50px; }
             .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1.1rem; }
             .contact-box { padding: 30px; }
             .contact-item { flex-direction: column; text-align: center; align-items: center; }
+            .contact-item span { min-width: auto; }
         }
     </style>
 </head>
@@ -266,7 +266,8 @@
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#sap">Crédit d'Impôt</a></li>
-            <li><a href="#tarifs">Tarifs & Forfaits</a></li>
+            <li><a href="#tarifs">Tarifs</a></li>
+            <li><a href="#avis">Avis</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -296,7 +297,7 @@
                     <svg viewBox="0 0 24 24"><path d="M19,2H5A3,3,0,0,0,2,5V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V5A3,3,0,0,0,19,2Zm1,17a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4H19a1,1,0,0,1,1,1ZM9,12a1,1,0,1,1-1,1A1,1,0,0,1,9,12Zm6,0a1,1,0,1,1-1,1A1,1,0,0,1,15,12Zm-6,4a1,1,0,1,1-1,1A1,1,0,0,1,9,16Zm6,0a1,1,0,1,1-1,1A1,1,0,0,1,15,16Zm1-9H8A1,1,0,0,0,8,9h8a1,1,0,0,0,0-2Z"/></svg>
                 </div>
                 <h3>💾 Hardware & SSD</h3>
-                <p>Boostez votre PC avec un SSD, extension mémoire et sauvegarde de vos données précieuses.</p>
+                <p>Boostez votre PC avec un SSD, extension mémoire et sauvegarde de vos données.</p>
             </div>
             <div class="card">
                 <div class="card-icon">
@@ -363,12 +364,47 @@
                     <li>Diagnostic et réparation ciblée</li>
                     <li>Déplacement inclus (< 5km)</li>
                 </ul>
-                <div style="margin-top: 30px;"><a href="#contact" class="btn" style="background: #eee;">Prendre RDV Horaire</a></div>
+                <div style="margin-top: 30px;"><a href="#contact" class="btn" style="background: #eee; color:var(--dark);">Prendre RDV Horaire</a></div>
             </div>
         </div>
-
         <div class="tarif-notes">
             <em>William PEREZ inclut le déplacement sur Escalquens et les communes dans un rayon de 5 km. TVA non applicable (art. 293 B du CGI).</em>
+        </div>
+    </section>
+
+    <section id="avis" class="avis-section">
+        <div class="section-title">
+            <h2>Vos Avis Comptent</h2>
+            <p>Partagez votre expérience suite à mon intervention à domicile.</p>
+        </div>
+        
+        <div class="reviews-container">
+            <div class="review-box">
+                <span class="google-logo">
+                    <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                </span>
+                <h3>Laisser un avis sur Google</h3>
+                <p>Flashez ce QR code avec votre smartphone :</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://g.page/r/CX7XYwJhjM9FEAE/review" alt="QR Code Avis Google" class="qr-code-img">
+                <p>... ou cliquez sur le lien suivant :</p>
+                <a href="https://g.page/r/CX7XYwJhjM9FEAE/review" target="_blank" class="google-link">https://g.page/r/CX7XYwJhjM9FEAE/review</a>
+            </div>
+
+            <div class="review-box">
+                <h3>Laisser un témoignage direct</h3>
+                <p>Vous n'avez pas de compte Google ? Envoyez-moi votre témoignage pour le site :</p>
+                <form class="review-form" action="mailto:perezescalquens@gmail.com?subject=Témoignage Client Site Web" method="post" enctype="text/plain">
+                    <input type="text" name="Nom" placeholder="Votre Nom et Prénom" required>
+                    <select name="Note" required>
+                        <option value="">Donnez une note...</option>
+                        <option value="5">⭐⭐⭐⭐⭐ Excellent service</option>
+                        <option value="4">⭐⭐⭐⭐ Très satisfait</option>
+                        <option value="3">⭐⭐⭐ Satisfait</option>
+                    </select>
+                    <textarea name="Message" rows="5" placeholder="Votre message ou avis sur l'intervention..." required></textarea>
+                    <button type="submit" class="btn">Envoyer mon témoignage</button>
+                </form>
+            </div>
         </div>
     </section>
 
