@@ -4,47 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>William PEREZ Escalquens | Assistance Informatique SAP & Retrogaming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #004494;
-            --secondary: #00a8e8;
-            --sap-pink: #ed008c;
-            --dark: #2c3e50;
-            --light: #f8f9fa;
-            --retro-accent: #e74c3c;
+            --primary: #00306e; /* Bleu marine plus profond */
+            --secondary: #008fcc; /* Bleu clair vif */
+            --sap-pink: #ed008c; /* Conserver le rose SAP */
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --bg-light: #f4f7f6; /* Fond très légèrement grisé */
+            --retro-accent: #d32f2f; /* Rouge rétro plus sombre */
+            --shadow: 0 4px 6px rgba(0,0,0,0.07);
+            --transition: all 0.3s ease;
         }
 
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--dark);
+            background-color: var(--bg-light);
         }
 
+        /* --- NAVIGATION FINESSE --- */
         nav {
-            background: #fff;
-            padding: 1rem 5%;
+            background: rgba(255,255,255,0.98);
+            padding: 1.2rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 15px rgba(0,0,0,0.03);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo { font-size: 1.3rem; font-weight: bold; color: var(--primary); }
-        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
-        .nav-links li { margin-left: 25px; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .logo svg { width: 25px; height: 25px; fill: var(--primary); }
+        
+        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: var(--transition); font-size: 0.95rem; }
         .nav-links a:hover { color: var(--secondary); }
 
+        /* --- HERO MODERNISÉE AVEC L'IMAGE GÉNÉRÉE --- */
         .hero {
-            background: linear-gradient(rgba(0,40,85,0.85), rgba(0,40,85,0.85)), 
-                        url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
-            height: 60vh;
+            background: linear-gradient(135deg, rgba(0,30,110,0.92) 0%, rgba(0,50,130,0.85) 100%), 
+                        url('image_0.png') no-repeat center center/cover;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -54,112 +62,208 @@
             padding: 0 20px;
         }
 
-        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
         .sap-badge {
-            background: var(--sap-pink);
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
+        .sap-badge::before { content: ''; display: block; width: 10px; height: 10px; background: var(--sap-pink); border-radius: 50%; }
+
+        .hero h1 { font-size: 3.2rem; margin: 0 0 15px; font-weight: 700; max-width: 800px; line-height: 1.2; }
+        .hero p { font-size: 1.3rem; font-weight: 300; max-width: 600px; margin-bottom: 40px; }
 
         .btn {
-            background: var(--secondary);
-            color: white;
-            padding: 15px 35px;
+            background: var(--light);
+            color: var(--primary);
+            padding: 18px 45px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+            border-radius: 50px;
+            font-weight: 700;
             display: inline-block;
-            margin-top: 20px;
-            transition: 0.3s;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 1rem;
         }
-        .btn:hover { background: var(--primary); }
+        .btn:hover { background: var(--secondary); color: var(--light); transform: translateY(-3px); }
 
-        section { padding: 80px 5% 60px; }
-        
-        .section-title { text-align: center; margin-bottom: 40px; }
-        .section-title h2 { font-size: 2rem; color: var(--primary); }
+        /* --- SECTION COMMUNES --- */
+        section { padding: 100px 8% 80px; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary); font-weight: 700; margin-bottom: 10px; }
+        .section-title p { color: #666; font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        /* --- SERVICES MODERNISÉS & ICÔNES --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
 
         .card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-            transition: 0.3s;
-        }
-        .card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-        .card h3 { color: var(--primary); margin-top: 0; }
-
-        .sap-box {
-            background: #fff;
-            border: 2px solid var(--sap-pink);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px auto;
-            max-width: 900px;
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        /* Tarifs Styles */
-        .price-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .price-box {
-            background: #fff;
+            background: var(--light);
             padding: 40px;
             border-radius: 15px;
             text-align: center;
-            flex: 1;
-            min-width: 300px;
-            max-width: 450px;
-            border: 2px solid #eee;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card:hover { transform: translateY(-8px); border-color: var(--secondary); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        
+        .card h3 { color: var(--primary); font-size: 1.4rem; margin-top: 25px; margin-bottom: 15px; font-weight: 600; }
+        .card p { color: #555; font-size: 0.95rem; margin: 0; flex-grow: 1; }
+
+        /* Icônes SVG pour les services */
+        .card-icon { width: 50px; height: 50px; fill: var(--secondary); display: flex; align-items: center; justify-content: center; }
+        .card-icon svg { width: 100%; height: 100%; }
+        
+        /* Style spécifique Retro */
+        .card.retro { border-left: 4px solid var(--retro-accent); }
+        .card.retro h3 { color: var(--retro-accent); }
+        .card.retro .card-icon fill { fill: var(--retro-accent); }
+
+        /* --- SECTION SAP ÉLÉGANTE --- */
+        .sap-section { background: var(--light); border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .sap-box {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .price-box.featured { border-color: var(--secondary); }
+        /* Recréation visuelle d'un sceau de qualité SAP car image précédente manquante */
+        .sap-seal {
+            min-width: 160px; height: 160px;
+            background: var(--sap-pink);
+            border-radius: 50%;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            color: white; font-weight: 700; text-align: center;
+            box-shadow: 0 6px 15px rgba(237, 0, 140, 0.3);
+            padding: 10px;
+            border: 4px solid #fff;
+            outline: 2px solid var(--sap-pink);
+        }
+        .sap-seal .text-large { font-size: 2rem; line-height: 1; }
+        .sap-seal .text-small { font-size: 0.8rem; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
 
-        .price-main { font-size: 3rem; font-weight: bold; color: var(--sap-pink); }
-        .price-sub { font-size: 1.1rem; color: var(--dark); margin-top: -10px; display: block; }
+        .sap-content h3 { color: var(--sap-pink); font-size: 2rem; margin-top: 0; font-weight: 700; }
+        .sap-content p { color: #555; font-size: 1.1rem; max-width: 600px; }
 
-        .features-list { list-style: none; padding: 0; margin: 25px 0; text-align: left; display: inline-block; }
-        .features-list li { margin-bottom: 10px; }
-        .features-list li::before { content: "✔️"; margin-right: 10px; color: var(--secondary); }
+        /* --- REFONTE DES TARIFS & FORFAITS --- */
+        .tarifs-section { background: var(--bg-light); }
+        .price-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 50px;
+        }
 
-        .contact-box { text-align: center; font-size: 1.2rem; background: #fff; padding: 30px; border-radius: 10px; }
+        .price-box {
+            background: var(--light);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #eee;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
 
+        /* Mis en valeur des Forfaits */
+        .price-box.featured {
+            border: 2px solid var(--secondary);
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0, 143, 204, 0.08);
+        }
+        .price-box.featured h3 { color: var(--secondary); }
+        .featured-badge {
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            background: var(--secondary); color: white;
+            padding: 5px 25px; border-radius: 50px;
+            font-weight: 700; font-size: 0.8rem; text-transform: uppercase;
+        }
+
+        .price-box h3 { color: var(--primary); font-size: 1.8rem; margin: 0 0 10px; font-weight: 700; }
+        .price-main { font-size: 4rem; font-weight: 800; color: var(--sap-pink); line-height: 1.1; }
+        .price-main small { font-size: 1.5rem; font-weight: 400; color: #777; vertical-align: middle; }
+        .price-sub { font-size: 1.1rem; color: #555; display: block; margin-bottom: 30px; }
+
+        .features-list { list-style: none; padding: 0; margin: 0; text-align: left; display: inline-block; }
+        .features-list li { margin-bottom: 12px; font-size: 1rem; color: #444; }
+        .features-list li::before { content: '✓'; margin-right: 12px; color: var(--secondary); font-weight: bold; }
+        .features-list li strong { font-weight: 600; color: #1a1a1a; }
+
+        .tarif-notes { text-align: center; font-size: 0.9rem; color: #777; max-width: 600px; margin: 0 auto; }
+
+        /* --- CONTACT PROPRE --- */
+        .contact-section { background: var(--bg-light); border-top: 1px solid #eee; }
+        .contact-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--light);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-item { display: flex; align-items: center; gap: 20px; font-size: 1.1rem; padding: 15px; border-radius: 10px; transition: var(--transition); }
+        .contact-item:hover { background: rgba(0,143,204,0.03); }
+        .contact-icon { width: 40px; height: 40px; fill: var(--secondary); display: flex; align-items: center; justify-content: center; }
+        
+        .contact-item span { font-weight: 600; color: var(--primary); min-width: 100px; }
+        .contact-item a, .contact-item p { margin: 0; text-decoration: none; color: var(--dark); font-weight: 400; }
+        .contact-item a:hover { color: var(--secondary); }
+
+        /* --- FOOTER FIN --- */
         footer {
             background: var(--dark);
-            color: #ecf0f1;
+            color: #b3b3b3;
             text-align: center;
-            padding: 40px 5%;
+            padding: 50px 8%;
             font-size: 0.9rem;
+            border-top: 4px solid var(--primary);
         }
+        footer strong { color: #fff; font-size: 1.1rem; display: block; margin-bottom: 10px; }
 
-        @media (max-width: 768px) {
+        /* --- RESPONSIVITÉ FINALE --- */
+        @media (max-width: 900px) {
+            nav { padding: 1.2rem 5%; }
+            .nav-links { gap: 15px; }
+            .hero h1 { font-size: 2.5rem; }
+            .sap-box { flex-direction: column; text-align: center; gap: 30px; }
+            .price-container { grid-template-columns: 1fr; }
+            .price-box.featured { transform: scale(1); margin-top: 20px; }
+        }
+        @media (max-width: 600px) {
             .nav-links { display: none; }
-            .sap-box { text-align: center; justify-content: center; flex-direction: column; }
+            .logo { font-size: 1.3rem; }
+            section { padding: 80px 5% 60px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .contact-box { padding: 30px; }
+            .contact-item { flex-direction: column; text-align: center; align-items: center; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">💻 William PEREZ</div>
+        <div class="logo">
+            <svg viewBox="0 0 24 24"><path d="M20,18a1,1,0,0,0,1-1V12.07c0-1.85-2.09-3.41-4.71-4.11L13,6.87V4H11V6.87L7.71,7.96C5.09,8.66,3,10.22,3,12.07V17a1,1,0,0,0,1,1ZM5,12.07c0-.68.83-1.42,2.36-1.92l4-1.33a2.91,2.91,0,0,1,1.28,0l4,1.33c1.53.5,2.36,1.24,2.36,1.92V16H5Zm11.3,7.29L15,18.06V19H9v-.94l-1.3.77a1,1,0,0,1-1-1.72l1.3-.77V13H5v4a3,3,0,0,0,3,3H16a3,3,0,0,0,3-3V13H17v3.34l1.3.77A1,1,0,0,1,16.3,19.36Z"/></svg>
+            William PEREZ
+        </div>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#sap">Crédit d'Impôt</a></li>
@@ -170,103 +274,140 @@
 
     <header class="hero">
         <div class="sap-badge">Agréé Services à la Personne</div>
-        <h1>Assistance Informatique à Escalquens</h1>
-        <p>Expert Windows & Retrogaming. Bénéficiez de 50% de crédit d'impôt sur toutes vos prestations.</p>
-        <a href="#contact" class="btn">Prendre RDV</a>
+        <h1>Assistance Informatique à Domicile</h1>
+        <p>Expert Windows & Retrogaming à Escalquens. 50% de crédit d'impôt sur toutes mes prestations.</p>
+        <a href="#contact" class="btn">Prendre Rendez-vous</a>
     </header>
 
     <section id="services">
         <div class="section-title">
-            <h2>Mes Domaines d'Intervention</h2>
+            <h2>Dépannage & Assistance Pro</h2>
+            <p>William PEREZ intervient chez vous pour des solutions rapides et durables.</p>
         </div>
         <div class="grid">
             <div class="card">
-                <h3>🛠️ Dépannage Windows</h3>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M19.36,10.64a2,2,0,0,0-1.27-.61l-1.36-.14A7.83,7.83,0,0,0,13.5,6.5L13,4A2,2,0,0,0,11,2a2,2,0,0,0-2,2l-.5,2.5A7.83,7.83,0,0,0,5.27,9.89L3.91,10a2,2,0,0,0-1.27.61,2,2,0,0,0-.54,1.35L2,13.5a2,2,0,0,0,2,2H6.5A7.83,7.83,0,0,0,9.89,18.73L10,20.09A2,2,0,0,0,12,22h.5a2,2,0,0,0,1.35-.54l1.36-1.36a2,2,0,0,0,.61-1.27l.14-1.36A7.83,7.83,0,0,0,19.33,14H22a2,2,0,0,0,2-2v-.5A2,2,0,0,0,19.36,10.64ZM12,15a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z"/></svg>
+                </div>
+                <h3>🛠️ Windows Pro</h3>
                 <p>Réparation système, suppression de virus, lenteurs et mises à jour (PC uniquement).</p>
             </div>
             <div class="card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M19,2H5A3,3,0,0,0,2,5V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V5A3,3,0,0,0,19,2Zm1,17a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4H19a1,1,0,0,1,1,1ZM9,12a1,1,0,1,1-1,1A1,1,0,0,1,9,12Zm6,0a1,1,0,1,1-1,1A1,1,0,0,1,15,12Zm-6,4a1,1,0,1,1-1,1A1,1,0,0,1,9,16Zm6,0a1,1,0,1,1-1,1A1,1,0,0,1,15,16Zm1-9H8A1,1,0,0,0,8,9h8a1,1,0,0,0,0-2Z"/></svg>
+                </div>
                 <h3>💾 Hardware & SSD</h3>
                 <p>Boostez votre PC avec un SSD, extension mémoire et sauvegarde de vos données précieuses.</p>
             </div>
             <div class="card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10,0,0,0,2,12,10,10,0,0,0,12,22a10,10,0,0,0,10-10A10,10,0,0,0,12,2Zm1,17.93V13h6.93A8,8,0,0,1,13,19.93ZM4.07,11H11v6.93A8,8,0,0,1,4.07,11ZM11,4.07A8,8,0,0,1,4.07,13H11V4.07ZM13,4.07V11h6.93A8,8,0,0,1,13,4.07Z"/></svg>
+                </div>
                 <h3>🌐 Internet & Box</h3>
                 <p>Configuration de box, optimisation du WiFi, installation d'imprimantes et objets connectés.</p>
             </div>
-            <div class="card" style="border-color: var(--retro-accent);">
-                <h3 style="color: var(--retro-accent);">🎮 Expertise Retrogaming</h3>
+            <div class="card retro">
+                <div class="card-icon" style="fill: var(--retro-accent);">
+                    <svg viewBox="0 0 24 24"><path d="M21,6a3,3,0,0,0-3,3V10H16a3,3,0,0,0-3-3H11a3,3,0,0,0-3,3V9A3,3,0,0,0,2,9,3,3,0,0,0,5,12a3,3,0,0,0-3,3,3,3,0,0,0,3,3,3,3,0,0,0,1,2,3,3,0,0,0,1,1,3,3,0,0,0,3,1l2-2h4l2,2a3,3,0,0,0,3-1,3,3,0,0,0,1-1,3,3,0,0,0,1-2,3,3,0,0,0,3-3,3,3,0,0,0-3-3,3,3,0,0,0-3,3H18a3,3,0,0,0,3,3,3,3,0,0,0-3,3H16a3,3,0,0,0-3-3H11a3,3,0,0,0-3-3v1h1l2,2H16l2-2h1a3,3,0,0,0-3-3ZM6,14a1,1,0,1,1-1,1A1,1,0,0,1,6,14Zm6-4a1,1,0,1,1-1,1A1,1,0,0,1,12,10Z"/></svg>
+                </div>
+                <h3>🎮 Expert Retrogaming</h3>
                 <p>Montage et configuration de systèmes rétro (Raspberry Pi, Batocera, Recalbox).</p>
             </div>
         </div>
     </section>
 
-    <section id="sap" style="background-color: var(--light);">
-        <div class="section-title">
-            <h2>Avantages Fiscaux (SAP)</h2>
-        </div>
+    <section id="sap" class="sap-section">
         <div class="sap-box">
-            <img src="Traceur_SAP_web_rvb_jpg.jpg" alt="Logo Services à la Personne" style="width: 150px; height: auto;">
-            <div style="flex: 1;">
-                <h3 style="color: var(--sap-pink); margin-top: 0;">Réduisez votre facture de 50%</h3>
-                <p>Grâce à mon agrément <strong>Services à la Personne</strong> (N° SAP102821428), mes prestations vous ouvrent droit à un crédit d'impôt de 50% des sommes versées.</p>
-                <p><strong>C'est simple :</strong> Je vous fournis une attestation fiscale annuelle. Vous reportez le montant sur votre déclaration et l'État vous rembourse la moitié des frais engagés.</p>
+            <div class="sap-seal">
+                <span class="text-large">50%</span>
+                <span class="text-small">SÉCURISÉ</span>
+                <span class="text-small">D'impôt</span>
+            </div>
+            <div class="sap-content">
+                <h3>Réduisez votre facture de 50%</h3>
+                <p>William PEREZ détient l'agrément <strong>Services à la Personne</strong> (N° SAP102821428).</p>
+                <p><strong>C'est simple & transparent :</strong> Je vous fournis une attestation fiscale annuelle. Vous reportez le montant sur votre déclaration et l'État vous rembourse ou déduit 50% des frais engagés.</p>
             </div>
         </div>
     </section>
 
-    <section id="tarifs">
+    <section id="tarifs" class="tarifs-section">
         <div class="section-title">
-            <h2>Tarifs & Forfaits Transparents</h2>
-            <p>Tous les prix indiqués ci-dessous sont <strong>après crédit d'impôt</strong>.</p>
+            <h2>Tarifs & Forfaits Clairs</h2>
+            <p>Tous les prix indiqués sont <strong>après crédit d'impôt</strong>.</p>
         </div>
         
         <div class="price-container">
+            <div class="price-box featured">
+                <div class="featured-badge">Recommandé</div>
+                <h3>Forfaits Prestations</h3>
+                <div class="price-sub">Diagnostic + Réparation inclus</div>
+                <div class="price-main">Dès 30€</div>
+                <span class="price-sub">Après crédit d'impôt</span>
+                <ul class="features-list">
+                    <li><strong>Pack Installation (30€)</strong> : PC neuf ou Box Internet</li>
+                    <li><strong>Pack Santé (40€)</strong> : Nettoyage virus & Optimisation</li>
+                    <li><strong>Pack Retrogaming (40€)</strong> : Config système clé en main</li>
+                    <li><strong>Attestation fiscale incluse</strong></li>
+                </ul>
+                <div style="margin-top: 30px;"><a href="#contact" class="btn">Prendre RDV Forfait</a></div>
+            </div>
+
             <div class="price-box">
                 <h3>Tarif Horaire</h3>
-                <div class="price-main">20€<small style="font-size: 1.2rem;">/h</small></div>
+                <div class="price-sub">Pour un dépannage précis</div>
+                <div class="price-main">20€<small>/h</small></div>
                 <span class="price-sub">Après crédit d'impôt (40€ avant)</span>
                 <ul class="features-list">
                     <li><strong>1ère heure indivisible</strong></li>
                     <li>Puis par tranches de 30 min (10€)</li>
-                    <li>Diagnostic et dépannage ciblé</li>
-                    <li>Déplacement inclus (< 5km)</li>
+                    <li>Diagnostic et réparation ciblée</li>
+                    <li>Déplacement gratuit (< 5km)</li>
                 </ul>
-            </div>
-
-            <div class="price-box featured">
-                <h3>Forfaits Prestations</h3>
-                <div class="price-main">Dès 30€</div>
-                <span class="price-sub">Après crédit d'impôt</span>
-                <ul class="features-list">
-                    <li><strong>Pack Installation (30€)</strong> : PC ou Box</li>
-                    <li><strong>Pack Santé (40€)</strong> : Nettoyage & Optimisation</li>
-                    <li><strong>Pack Retrogaming (40€)</strong> : Config système</li>
-                    <li>Inclus : Attestation fiscale annuelle</li>
-                </ul>
+                <div style="margin-top: 30px;"><a href="#contact" class="btn" style="background: #eee;">Prendre RDV Horaire</a></div>
             </div>
         </div>
 
-        <p style="text-align:center; font-size: 0.9rem; margin-top: 30px; color: #777;">
-            <em>Déplacement inclus sur Escalquens et communes à moins de 5 km. TVA non applicable (art. 293 B du CGI).</em>
-        </p>
+        <div class="tarif-notes">
+            <em>William PEREZ inclut le déplacement sur Escalquens et communes dans un rayon de 5 km. TVA non applicable (art. 293 B du CGI).</em>
+        </div>
     </section>
 
-    <section id="contact" style="background-color: var(--light);">
+    <section id="contact" class="contact-section">
         <div class="section-title">
-            <h2>Prendre Rendez-vous</h2>
-            <p>Intervention rapide à domicile sur Escalquens et rayon de 5 km.</p>
+            <h2>Votre Intervention</h2>
+            <p>Réponse rapide. Intervention à domicile sur Escalquens et rayon de 5 km.</p>
         </div>
         <div class="contact-box">
-            <p>📞 Téléphone : <a href="tel:0685816226" style="color: var(--primary); font-weight: bold; text-decoration: none;">06 85 81 62 26</a></p>
-            <p>📧 Email : <a href="mailto:perezescalquens@gmail.com" style="color: var(--primary); font-weight: bold; text-decoration: none;">perezescalquens@gmail.com</a></p>
-            <p>📍 Adresse : 50 Avenue du Lauragais, 31750 Escalquens</p>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24"><path d="M19,1H5A3,3,0,0,0,2,4V20a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V4A3,3,0,0,0,19,1ZM17,21H7a1,1,0,0,1-1-1V4A1,1,0,0,1,7,3H17a1,1,0,0,1,1,1V20A1,1,0,0,1,17,21Z"/><path d="M12,18a1,1,0,1,0,1,1A1,1,0,0,0,12,18Z"/></svg>
+                </div>
+                <span>Téléphone :</span>
+                <a href="tel:0685816226" style="color: var(--secondary); font-weight: 600;">06 85 81 62 26</a>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22,3H2A2,2,0,0,0,0,5V19a2,2,0,0,0,2,2H22a2,2,0,0,0,2-2V5A2,2,0,0,0,22,3Zm0,16H2V7l10,6L22,7ZM12,11,2,5H22Z"/></svg>
+                </div>
+                <span>Email :</span>
+                <a href="mailto:perezescalquens@gmail.com">perezescalquens@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10,0,0,0,2,12a10,10,0,0,0,10,10,10,10,0,0,0,10-10A10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Zm1-13H11V13h6V11H13Z"/></svg>
+                </div>
+                <span>Adresse :</span>
+                <p>50 Avenue du Lauragais, 31750 Escalquens</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p><strong>William PEREZ - Escalquens</strong><br>
+        <strong>William PEREZ - Escalquens</strong>
         Services à la Personne - N° SAP102821428 <br>
         SIRET : 10282142800012 <br>
-        &copy; 2026 - William PEREZ - Tous droits réservés.</p>
+        &copy; 2026 - Tous droits réservés.
     </footer>
 
 </body>
